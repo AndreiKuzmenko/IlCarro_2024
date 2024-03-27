@@ -9,11 +9,22 @@ public class HelperBase {
     public HelperBase(WebDriver wd) {
         this.wd = wd;
     }
+    public void click(By locator){
+        wd.findElement(locator).click();
+    }
+
     public void type(By locator, String text){
         WebElement element = wd.findElement(locator);
         // element.click();
         element.clear();
         element.sendKeys(text);
+    }
+    public void pause(int millis){
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
     public boolean isElementPresent(By locator)
     {
