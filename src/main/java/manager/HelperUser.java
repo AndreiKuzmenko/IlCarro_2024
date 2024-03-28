@@ -23,12 +23,20 @@ public class HelperUser extends HelperBase{
         type(By.xpath("//input[@id='email']"), user.getEmail());
         type(By.xpath("//input[@id='password']"), user.getPassword());
     }
-     public void lodOut() {
+     public void logout() {
+        click(By.xpath("//*[.=' Logout ']"));
 
      }
-    public void Logged() {
+    public boolean isLogged() {
+        return isElementPresent(By.xpath("//*[.=' Logout ']"));
 
     }
+    public void clickOkButton(){
+        click(By.xpath("//button[@type='button']"));
+    }
 
+    public boolean isLoggedSuccess(){
+        return isElementPresent(By.xpath("//h2[contains(text(),'success')]"));
+    }
 
 }
