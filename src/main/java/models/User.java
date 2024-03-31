@@ -1,6 +1,7 @@
 package models;
 
 public class User {
+
     String name;
     String lastName;
     String email;
@@ -17,6 +18,14 @@ public class User {
 //        this.email = email;
 //        this.password = password;
 //    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 
     public String getEmail() {
         return email;
@@ -41,6 +50,7 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
     public User withName(String name) {
         this.name = name;
         return this;
@@ -51,7 +61,7 @@ public class User {
         return this;
     }
 
-    public  User withEmail(String email) {
+    public User withEmail(String email) {
         this.email = email;
         return this;
     }
